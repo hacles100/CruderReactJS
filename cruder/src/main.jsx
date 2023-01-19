@@ -31,10 +31,14 @@ const router = createBrowserRouter([
         element: <Edit/>
       },
 
+      // rota post
+
       {
         path: "post",
         element: <Post/>
       },
+
+      // rota read
 
       {
         path: "read",
