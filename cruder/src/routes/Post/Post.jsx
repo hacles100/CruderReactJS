@@ -10,6 +10,8 @@ function Post(){
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+    const addPost = data => console.log(data)
+
     return(
         <div>
            <Header/>
@@ -21,20 +23,21 @@ function Post(){
                 <div className="line"></div>
 
                 <div className="card-body-post">
-                    <form>
+
+                    <form onSubmit={handleSubmit(addPost)}>
                         <div className="fields">
-                            <label>Titulo</label>
-                            <input type="text" />
+                            <label>Title</label>
+                            <input type="text" name="title" {...register("title")}/>
                         </div>
 
                         <div className="fields">
-                            <label>Descricao</label>
-                            <input type="text" />
+                            <label>Description</label>
+                            <input type="text" name="description" {...register("description")}/>
                         </div>
 
                         <div className="fields">
-                            <label>Conteudo</label>
-                            <textarea type="text"></textarea>
+                            <label>Content</label>
+                            <textarea type="text" name="content" {...register("content")}></textarea>
                         </div>
 
                         <div className="btn-post">
